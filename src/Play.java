@@ -54,6 +54,12 @@ public class Play extends Thread {
 	@Override
 	public void run() {
 		do {
+			try {
+				sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			if (!mFinish) {
 
 			} else {

@@ -16,7 +16,7 @@ public class mainForm {
 
 	public boolean OnOff = false;
 	private JFrame frame;
-	static JSlider slider = new JSlider();
+	volatile static  JSlider slider = new JSlider();
 	JButton btn_scan;
 	JButton btn_reset;
 	JButton btn_onOff;
