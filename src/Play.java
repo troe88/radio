@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileInputStream;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -9,15 +8,15 @@ import javax.sound.sampled.DataLine;
 public class Play extends Thread {
 	private volatile boolean mFinish = false;
 	private Clip clip;
-	private volatile String pwd = "data/"; 
+	private volatile String pwd = "data/";
 
 	public void finish() {
 		mFinish = true;
 	}
 
-	public void changeRadioStation(int key){
+	public void changeRadioStation(int key) {
 		String path;
-		if(clip != null)
+		if (clip != null)
 			clip.stop();
 		switch (key) {
 		case 89:
@@ -50,7 +49,7 @@ public class Play extends Thread {
 			System.err.println(e);
 		}
 	}
-	
+
 	@Override
 	public void run() {
 		do {
@@ -61,7 +60,6 @@ public class Play extends Thread {
 				e.printStackTrace();
 			}
 			if (!mFinish) {
-
 			} else {
 				clip.stop();
 				return;
